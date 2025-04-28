@@ -1,72 +1,78 @@
-;;; Moving
+;;; creando agentes genéricos
+
+to setup
+  clear-all
+  create-turtles 100
+  reset-ticks
+end
+
 
 ;to setup
 ;  ca
 ;  crt 100
 ;  reset-ticks
 ;end
+
+;;; creando agentes específicos
+
+;breed [hombres hombre]
+;breed [mujeres mujer]
 ;
-;to go
-;  ask turtles[
-;    fd 1]
-;  tick
-;end
-
-;;; Trajectories: random walk
-
 ;to setup
-;  ca
-;  crt 1 [
-;    pen-down]
+;  clear-all
+;  create-hombres 50 [
+;    setxy random-xcor random-ycor
+;    set color white
+;  ]
+;  create-mujeres 50 [
+;    setxy random-xcor random-ycor
+;    set color red
+;  ]
 ;  reset-ticks
 ;end
+
+
+;;; creando agentes específicos con variables
+;breed [hombres hombre]
+;breed [mujeres mujer]
+;turtles-own [edad]
 ;
-;to go
-;  ask turtles[
-;    set heading random 360
-;    fd 1]
-;  tick
+;to setup
+;  clear-all
+;  create-hombres 50 [
+;    setxy random-xcor random-ycor
+;    set color white
+;    set edad random 5
+;    set size edad
+;  ]
+;  create-mujeres 50 [
+;    setxy random-xcor random-ycor
+;    set color red
+;    set edad random 5
+;    set size edad
+;  ]
+;  reset-ticks
 ;end
 
+;;;; variable del patch
 
-
-
-;;; Neighborhoods
-
+;patches-own[alimento]
+;
 ;to setup
 ;  ca
-;  crt 1
+;  crt 100[
+;    setxy random-xcor random-ycor]
+;
+;  ask patches[
+;    set alimento random 100
+;    set pcolor scale-color green alimento 0 100]
+;
+;  reset-ticks
 ;end
 
-;to go
-;  ask turtles[
-;    ask neighbors [
-;      set pcolor [color] of myself - 2
-;    ]
-;  ]
-;  stop
-;end
 
-;to go
-;  ask turtles[
-;    ask neighbors4 [
-;      set pcolor [color] of myself - 2
-;    ]
-;  ]
-;  stop
-;end
 
-;to go
-;  ask turtles[
-;    ask patches in-radius 5[
-;      set pcolor [color] of myself - 2
-;    ]
-;    ask patches in-radius 4[
-;      set pcolor black
-;    ]
-;  ]
-;  stop
-;end
+
 @#$#@#$#@
 GRAPHICS-WINDOW
 129
@@ -94,6 +100,23 @@ GRAPHICS-WINDOW
 1
 ticks
 30.0
+
+BUTTON
+33
+122
+99
+155
+NIL
+setup
+NIL
+1
+T
+OBSERVER
+NIL
+NIL
+NIL
+NIL
+1
 
 @#$#@#$#@
 ## WHAT IS IT?
