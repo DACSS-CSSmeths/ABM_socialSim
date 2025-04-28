@@ -1,0 +1,18 @@
+---
+title: "Analisis del Experimento"
+output:
+  html_document:
+    df_print: paged
+---
+
+
+```{r}
+rm(list = ls())
+exp1=read.csv("Wolf_Sheep_Predation.csv",skip=6)
+```
+
+```{r}
+summary(lm(grass_remaining~wolf.reproduce + sheep.reproduce + grass.regrowth.time + 
+               initial.number.sheep+ initial.number.wolves, data=exp1))
+```
+
