@@ -2,17 +2,16 @@
 <model version="NetLogo 7.0.3" snapToGrid="false">
   <code>;;; Moving
 
-;to setup
-;  ca
-;  crt 100
-;  reset-ticks
-;end
-;
-;to go
-;  ask turtles[
-;    fd 1]
-;  tick
-;end
+to setup
+ ca
+ crt 100
+ reset-ticks
+end
+to go
+ ask turtles[
+   fd 1]
+ tick
+end
 
 ;;; Trajectories: random walk
 
@@ -69,7 +68,9 @@
 ;  stop
 ;end</code>
   <widgets>
-    <view x="129" wrappingAllowedX="true" y="36" frameRate="30.0" minPycor="-16" height="340" showTickCounter="true" patchSize="10.2" fontSize="10" wrappingAllowedY="true" width="340" tickCounterLabel="ticks" maxPycor="16" updateMode="0" maxPxcor="16" minPxcor="-16"></view>
+    <view x="317" wrappingAllowedX="true" y="33" frameRate="30.0" minPycor="-16" height="340" showTickCounter="true" patchSize="10.2" fontSize="10" wrappingAllowedY="true" width="340" tickCounterLabel="ticks" maxPycor="16" updateMode="0" maxPxcor="16" minPxcor="-16"></view>
+    <button x="39" y="103" height="40" disableUntilTicks="false" forever="false" kind="Observer" width="55">setup</button>
+    <button x="130" y="102" height="40" disableUntilTicks="false" forever="true" kind="Observer" width="55">go</button>
   </widgets>
   <info>## WHAT IS IT?
 
